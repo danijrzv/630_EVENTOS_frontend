@@ -64,25 +64,25 @@ const Formulario = (props, ref) => {
   return (
     <>
       <h2 className="font-black text-3xl text-center">Administrador de Eventos</h2>
-        <p className="text-xl mt-5 mb-10 text-center">
+        <p className="text-xl font-medium mt-5 mb-10 text-center">
         Agrega tus Eventos y {""}
-        <span className="text-indigo-600 font-bold">Administralos</span>
+        <span className="text-gray-300 font-bold">Administralos</span>
         </p>
         <form 
         ref={ref}
         id="formulario"
-        className="bg-white py-10 px-5 mb-10 lg:mb-5 shadow-md rounded-md"
+        className="bg-gray-800 py-10 px-5 mb-10 lg:mb-5 shadow-md rounded-md"
         onSubmit={handleSubmit}>
             <div className="mb-5">
                 <label 
                     htmlFor="titulo"
-                    className="text-gray-700 uppercase font-bold"
+                    className="text-gray-300 uppercase font-bold"
                 >Título</label>
                 <input 
                 id="titulo"
                 type="text"
                 placeholder="Título del evento" 
-                className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                className="border-2 w-full p-2 mt-2 placeholder-gray-600 rounded-md bg-gray-300"
                 value={title}
                 onChange={e => setTitle(e.target.value)}
                 />
@@ -90,12 +90,12 @@ const Formulario = (props, ref) => {
             <div className="mb-5">
                 <label 
                     htmlFor="descripcion"
-                    className="text-gray-700 uppercase font-bold"
+                    className="text-gray-300 uppercase font-bold"
                 >Descripción</label>
                 <textarea 
                 id="descripcion"
                 placeholder="Descripción del Evento" 
-                className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                className="border-2 w-full p-2 mt-2 placeholder-gray-600 rounded-md bg-gray-300"
                 value={description}
                 onChange={e => setDescription(e.target.value)}
                 />
@@ -103,12 +103,12 @@ const Formulario = (props, ref) => {
             <div className="mb-5">
                 <label 
                     htmlFor="fecha_inicio"
-                    className="text-gray-700 uppercase font-bold"
+                    className="text-gray-300 uppercase font-bold"
                 >Fecha Inicio</label>
                 <input 
                 id="fecha_inicio"
                 type="date"
-                className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                className="border-2 w-full p-2 mt-2 placeholder-gray-600 rounded-md bg-gray-300"
                 value={start_time}
                 onChange={e => setStart_Time(e.target.value)}
                 />
@@ -116,12 +116,12 @@ const Formulario = (props, ref) => {
             <div className="mb-5">
                 <label 
                     htmlFor="fecha_fin"
-                    className="text-gray-700 uppercase font-bold"
+                    className="text-gray-300 uppercase font-bold"
                 >Fecha Fin</label>
                 <input 
                 id="fecha_fin"
                 type="date"
-                className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                className="border-2 w-full p-2 mt-2 placeholder-gray-600 rounded-md bg-gray-300"
                 value={end_time}
                 onChange={e => setEnd_Time(e.target.value)}
                 />
@@ -129,13 +129,13 @@ const Formulario = (props, ref) => {
             <div className="mb-5">
                 <label 
                     htmlFor="ubicacion"
-                    className="text-gray-700 uppercase font-bold"
+                    className="text-gray-300 uppercase font-bold"
                 >Ubicación</label>
                 <input 
                 id="ubicacion"
                 type="text"
                 placeholder="Ubicación del evento" 
-                className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                className="border-2 w-full p-2 mt-2 placeholder-gray-600 rounded-md bg-gray-300"
                 value={location}
                 onChange={e => setLocation(e.target.value)}
                 />
@@ -143,7 +143,7 @@ const Formulario = (props, ref) => {
             <input 
                 type="submit" 
                 className="bg-indigo-600 w-full p-3 text-white uppercase font-bold
-                hover:bg-indigo-700 cursor-pointer transition-colors"
+                hover:bg-indigo-700 cursor-pointer transition-colors rounded-md"
                 value={evento.id ? "Guardar cambios" : "Agregar Evento"}/>
         </form>
         {msg && <Alerta alerta={alerta}/>}

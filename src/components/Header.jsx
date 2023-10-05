@@ -5,14 +5,15 @@ const Header = () => {
     const {cerrarSesion} = useAuth()
 
   return (
-    <header className="py-10 bg-indigo-600">
+    <header className="py-10 bg-sky-800">
     <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center">
-        <h1 className="font-bold text-2xl text-indigo-200 text-center">630 {""}
-            <span className="text-white font-black">EVENTOS</span>
+        <h1 className="font-bold text-4xl text-gray-200 text-center">3
+            <span className="text-white text-2xl font-black">VENTOS</span>
         </h1>
 
         <nav className="flex flex-col items-center lg:flex-row gap-4 mt-5 lg:mt-0">
-            <Link to="/admin" className="text-white text-sm uppercase font-bold"> Eventos</Link>
+            <Link to="/admin" className="text-white text-sm uppercase font-bold"> Inicio</Link>
+            <Link to="/admin/eventos" className="text-white text-sm uppercase font-bold"> Eventos</Link>
             <button 
                 type="button"
                 className="text-white text-sm uppercase font-bold"

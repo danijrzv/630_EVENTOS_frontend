@@ -42,12 +42,12 @@ const OlvidePassword = () => {
     return (
         <>
             <div>
-                <h1 className="text-indigo-600 font-black text-6xl">
+                <h1 className="text-indigo-300 font-black text-6xl">
                     Recupera tu password y continúa publicando tus {""}
                     <span className="text-black">Eventos</span>
                 </h1>
             </div>
-            <div className="mt-20 md:mt-5 shadow-lg px-5 py-10 rounded-xl bg-white">
+            <div className="mt-20 md:mt-5 shadow-lg px-5 py-10 rounded-xl bg-gray-800">
                 {msg && 
                 <Alerta
                     alerta={alerta}
@@ -56,13 +56,13 @@ const OlvidePassword = () => {
                     onSubmit={handleSubmit}
                 >
                     <div className="my-5">
-                        <label className="uppercase text-gray-600 block text-xl font-bold">
+                        <label className="uppercase text-gray-300 block text-xl font-bold">
                             Email
                         </label>
                         <input 
                             type="email"
                             placeholder="Email de registro"
-                            className="border w-full p-3 mt-3 bg-gray-50 rounded-xl"
+                            className="border w-full p-3 mt-3 bg-gray-300 rounded-xl"
                             value={email}
                             onChange={e => setEmail(e.target.value)}
                         />
@@ -76,10 +76,10 @@ const OlvidePassword = () => {
                 </form>
                 <nav className="mt-10 lg:flex lg:justify-between">
                     <Link 
-                        className="block text-center my-5 text-gray-500"
+                        className="block text-center my-5 text-gray-400"
                         to="/">¿Ya tienes una cuenta? Inicia sesión</Link>
                     <Link 
-                        className="block text-center my-5 text-gray-500"
+                        className="block text-center my-5 text-gray-400"
                         to="/registrar">¿No tienes una cuenta? Registrate</Link>
                 </nav>
             </div>

@@ -13,6 +13,7 @@ export const EventosProvider = ({children}) => {
     // STATES
     const [eventos, setEventos] = useState([])
     const [evento, setEvento] = useState({})
+    const [eventosTotal, setEventosTotal] = useState([])
     // AUTENTICACIÓN
     const {auth} = useAuth()
     
@@ -31,10 +32,15 @@ export const EventosProvider = ({children}) => {
                         Authorization: `Bearer ${token}`
                     }
                 }
+                // NUevo
+                const [respuesta1, respuesta2] = await Promise.all([clienteAxios("/eventos", config), clienteAxios("/eventos/eventos-total", config)])
+                
+                
                 // OBTENER EVENTOS
                 const {data} = await clienteAxios("/eventos", config)
                 // AGREGANDO EVENTOS AL STATE
-                setEventos(data)
+                setEventos(respuesta1.data)
+                setEventosTotal(respuesta2.data)
             } catch (error) {
                 console.log(error)
             }
@@ -68,7 +74,7 @@ export const EventosProvider = ({children}) => {
         }else{
             // SI EL EVENTO NO TIENE ID
             try {
-                // ES UN EVENTO NUEVO, POR LO QUE SE ENVIA LA PETICIÓN POST CON LOS DATOS DEL EVENTO A ACTUALIZAR
+                // ES UN EVENTO NUEVO, POR LO QUE SE ENVIA LA PETICIÓN POST CON LOS DATOS DEL EVENTO A ALMACENAR
                 const {data} = await clienteAxios.post("/eventos", evento, config)
                 // AGREGAR AL STATE DE EVENTOS, EL EVENTO NUEVO Y UNA COPIA DE LOS EVENTOS PREVIOS
                 setEventos([data, ...eventos])
@@ -121,7 +127,9 @@ export const EventosProvider = ({children}) => {
             eliminarEvento,
             evento,
             setEvento,
-            ref
+            ref,
+            eventosTotal,
+            setEventosTotal
         }}
     >
         {children}

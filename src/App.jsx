@@ -13,6 +13,7 @@ import Registrar from "./paginas/Registrar"
 import OlvidePassword from "./paginas/OlvidePassword"
 import NuevoPassword from "./paginas/NuevoPassword"
 import ConfirmarCuenta from "./paginas/ConfirmarCuenta"
+import Eventos from "./paginas/Eventos"
 
 import AdministrarEventos from "./paginas/AdministrarEventos"
 
@@ -35,6 +36,7 @@ function App() {
 
               <Route path="/admin" element={<RutaProtegida/>}>
               <Route index element={<AdministrarEventos/>}/>
+              <Route path="eventos" element={<Eventos/>}/>
 
               </Route>
             </Routes>
